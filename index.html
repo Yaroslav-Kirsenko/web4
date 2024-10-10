@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>YouTube Clone with JS</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- Header -->
+    <header class="header">
+      <div class="header__logo">
+        <img src="img/youTube.png" alt="YouTube Logo"> Premium
+      </div>
+      <div class="header__search">
+        <input
+          type="text"
+          class="header__search-input"
+          id="searchInput"
+          placeholder="Search"
+        />
+        <button class="header__search-button" onclick="filterVideos()">Search</button>
+      </div>
+      <div class="header__icons">
+        <div class="header__icon">🔔</div>
+        <div class="header__icon">👤</div>
+        <div class="header__icon" onclick="toggleSidebar()">☰</div>
+      </div>
+    </header>
+
+    <!-- Filters -->
+    <section class="filters">
+      <div class="filter__item">Усі</div>
+      <div class="filter__item">Музика</div>
+      <div class="filter__item">Ігри</div>
+      <div class="filter__item">Новини</div>
+      <div class="filter__item">Пряма трансляція</div>
+      <div class="filter__item">Пригоди</div>
+      <div class="filter__item">Фільми</div>
+    </section>
+
+    <!-- Sidebar -->
+    <aside class="sidebar" id="sidebar">
+      <!-- Main Section -->
+      <div class="sidebar__item">
+        <div class="sidebar__icon">🏠</div>
+        Головна
+      </div>
+      <div class="sidebar__item">
+        <div class="sidebar__icon">🔥</div>
+        Популярне
+      </div>
+      <div class="sidebar__item">
+        <div class="sidebar__icon">🎥</div>
+        Підписки
+      </div>
+      <div class="sidebar__item">
+        <div class="sidebar__icon">📚</div>
+        Бібліотека
+      </div>
+
+      <!-- "Ви" Section -->
+      <h3>Ви</h3>
+      <div class="sidebar__item">
+        <div class="sidebar__icon">📺</div>
+        Ваш канал
+      </div>
+      <div class="sidebar__item">
+        <div class="sidebar__icon">🕒</div>
+        Історія
+      </div>
+      <div class="sidebar__item">
+        <div class="sidebar__icon">📹</div>
+        Ваші відео
+      </div>
+      <div class="sidebar__item">
+        <div class="sidebar__icon">⏳</div>
+        Переглянути пізніше
+      </div>
+      <div class="sidebar__item">
+        <div class="sidebar__icon">⬇️</div>
+        Завантаження
+      </div>
+      <div class="sidebar__item">
+        <div class="sidebar__icon">⬇️</div>
+        Показать більше
+      </div>
+
+      <!-- Subscriptions Section -->
+      <h3>Подписки</h3>
+      <div class="sidebar__item">
+        <img src="img/image1.png" alt="WAS: Популярне" class="sidebar__icon">
+        <span>WAS: Популярне</span>
+      </div>
+      <div class="sidebar__item">
+        <img src="img/image2.png" alt="TheDRJZ" class="sidebar__icon">
+        <span>TheDRJZ</span>
+      </div>
+      <div class="sidebar__item">
+        <img src="img/image3.png" alt="ROZETKA" class="sidebar__icon">
+        <span>ROZETKA</span>
+      </div>
+      <div class="sidebar__item">
+        <img src="img/image4.png" alt="Алексей Макаров" class="sidebar__icon">
+        <span>Алексей Макаров</span>
+      </div>
+      <div class="sidebar__item">
+        <img src="img/image5.png" alt="Хащі" class="sidebar__icon">
+        <span>Хащі</span>
+      </div>
+      <div class="sidebar__item">
+        <img src="img/image6.png" alt="Клятий Раціоналіст" class="sidebar__icon">
+        <span>Клятий Раціоналіст</span>
+      </div>
+      <div class="sidebar__item">
+        <span>Показать еще 24</span>
+      </div>
+    </aside>
+
+    <!-- Main content -->
+    <main class="main-content" id="videoContainer">
+      <!-- Video card 1 -->
+      <div class="video-card" data-title="Фан закінчився">
+        <img src="img/imageVideo1.png" alt="Video Thumbnail" />
+        <div class="video-card__details">
+          <div class="video-card__channel">
+                <img src="img/image1.png" alt="Channel Logo" />
+          </div>
+          <div class="video-card__info">
+            <div class="video-card__title">Leave YouTube</div>
+            <div class="video-card__meta">Канал ЛАМЫЧ • 15 тис. переглядів • 1 день тому</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Video card 2 -->
+      <div class="video-card" data-title="Я НЕ ХОЧУ такого БУДУЩЕГО">
+        <img src="img/imageVideo2.png" alt="Video Thumbnail" />
+        <div class="video-card__details">
+          <div class="video-card__channel">       
+                     <img src="img/image1.png" alt="Channel Logo" />
+          </div>
+          <div class="video-card__info">
+            <div class="video-card__title">Хешування</div>
+            <div class="video-card__meta">Python • 50 тис переглядів • 2 місяців тому</div>
+          </div>
+        </div>
+      </div>
+
+       <!-- Video card 2 -->
+       <div class="video-card" data-title="Я НЕ ХОЧУ такого БУДУЩЕГО">
+        <img src="img/imageVideo3.png" alt="Video Thumbnail" />
+        <div class="video-card__details">
+          <div class="video-card__channel">   
+                         <img src="img/image2.png" alt="Channel Logo" />
+          </div>
+          <div class="video-card__info">
+            <div class="video-card__title">Весь C# за 9 годин</div>
+            <div class="video-card__meta">Courses • 2.3 млн переглядів • 1 рік тому</div>
+          </div>
+        </div>
+      </div>
+
+       <!-- Video card 2 -->
+       <div class="video-card" data-title="Я НЕ ХОЧУ такого БУДУЩЕГО">
+        <img src="img/imageVideo4.png" alt="Video Thumbnail" />
+        <div class="video-card__details">
+          <div class="video-card__channel">
+                            <img src="img/image3.png" alt="Channel Logo" />
+          </div>
+          <div class="video-card__info">
+            <div class="video-card__title">Бійка на грі</div>
+            <div class="video-card__meta">NBA • 5.5 млн переглядів • 2 роки тому</div>
+          </div>
+        </div>
+      </div>
+
+       <!-- Video card 2 -->
+       <div class="video-card" data-title="Я НЕ ХОЧУ такого БУДУЩЕГО">
+        <img src="img/imageVideo5.png" alt="Video Thumbnail" />
+        <div class="video-card__details">
+          <div class="video-card__channel"> 
+                           <img src="img/image4.png" alt="Channel Logo" />
+          </div>
+          <div class="video-card__info">
+            <div class="video-card__title">Гра Кобі за збірну</div>
+            <div class="video-card__meta">NBA • 10.8 млн переглядів • 5 років тому</div>
+          </div>
+        </div>
+      </div>
+
+       <!-- Video card 2 -->
+       <div class="video-card" data-title="Я НЕ ХОЧУ такого БУДУЩЕГО">
+        <img src="img/imageVideo6.png" alt="Video Thumbnail" />
+        <div class="video-card__details">
+          <div class="video-card__channel">    
+                        <img src="img/image5.png" alt="Channel Logo" />
+          </div>
+          <div class="video-card__info">
+            <div class="video-card__title">Лайвхаки</div>
+            <div class="video-card__meta">SlivkiShow • 11.3 млн переглядів • 5 місяців тому</div>
+          </div>
+        </div>
+      </div>
+
+       <!-- Video card 2 -->
+       <div class="video-card" data-title="Я НЕ ХОЧУ такого БУДУЩЕГО">
+        <img src="img/imageVideo7.png" alt="Video Thumbnail" />
+        <div class="video-card__details">
+          <div class="video-card__channel"> 
+                           <img src="img/image6.png" alt="Channel Logo" />
+          </div>
+          <div class="video-card__info">
+            <div class="video-card__title">Бомба</div>
+            <div class="video-card__meta">Асафьев Станіслав • 1.3 млн переглядів • 11 місяців тому</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Video card 3 -->
+      <div class="video-card" data-title="Green Hell">
+        <img src="img/imageVideo8.png" alt="Video Thumbnail" />
+        <div class="video-card__details">
+          <div class="video-card__channel">
+                            <img src="img/image1.png" alt="Channel Logo" />
+          </div>
+          <div class="video-card__info">
+            <div class="video-card__title">Вело прогулянка</div>
+            <div class="video-card__meta">PUBG JASPER • 150 тис. переглядів • 5 днів тому</div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <!-- JavaScript -->
+    <script>
+      // Toggle sidebar visibility
+      function toggleSidebar() {
+        const sidebar = document.getElementById('sidebar');
+        const mainContent = document.getElementById('videoContainer');
+        const filters = document.querySelector('.filters');
+        sidebar.classList.toggle('sidebar--closed');
+        mainContent.classList.toggle('main-content--expanded');
+        filters.classList.toggle('filters--closed');
+      }
+
+      // Filter videos by title
+      function filterVideos() {
+        const query = document.getElementById('searchInput').value.toLowerCase();
+        const videos = document.querySelectorAll('.video-card');
+        videos.forEach(video => {
+          const title = video.getAttribute('data-title').toLowerCase();
+          if (title.includes(query)) {
+            video.style.display = 'block';
+          } else {
+            video.style.display = 'none';
+          }
+        });
+      }
+    </script>
+  </body>
+</html>
